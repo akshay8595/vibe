@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26CA2E612B3B6CEA006DA2AC /* VibeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E602B3B6CEA006DA2AC /* VibeApp.swift */; };
+		26CA2E632B3B6CEA006DA2AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E622B3B6CEA006DA2AC /* ContentView.swift */; };
+		26CA2E652B3B6CED006DA2AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CA2E642B3B6CED006DA2AC /* Assets.xcassets */; };
+		26CA2E682B3B6CED006DA2AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26CA2E672B3B6CED006DA2AC /* Preview Assets.xcassets */; };
+		26CA2E722B3B6CED006DA2AC /* VibeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E712B3B6CED006DA2AC /* VibeTests.swift */; };
+		26CA2E7C2B3B6CED006DA2AC /* VibeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E7B2B3B6CED006DA2AC /* VibeUITests.swift */; };
+		26CA2E7E2B3B6CED006DA2AC /* VibeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E7D2B3B6CED006DA2AC /* VibeUITestsLaunchTests.swift */; };
+		26CA2E942B3B77BA006DA2AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E932B3B77BA006DA2AC /* LoginView.swift */; };
+		26CA2E962B3B7A94006DA2AC /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E952B3B7A94006DA2AC /* InputView.swift */; };
+		26CA2E982B3B862B006DA2AC /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E972B3B862B006DA2AC /* RegistrationView.swift */; };
+		26CA2E9A2B3B8A40006DA2AC /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E992B3B8A40006DA2AC /* UserProfileView.swift */; };
+		26CA2E9C2B3B8D99006DA2AC /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E9B2B3B8D99006DA2AC /* SettingsRowView.swift */; };
+		26CA2E9E2B3B9BE1006DA2AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2E9D2B3B9BE1006DA2AC /* User.swift */; };
+		26CA2EA02B3BA3BC006DA2AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26CA2E9F2B3BA3BC006DA2AC /* GoogleService-Info.plist */; };
+		26CA2EA32B3BA694006DA2AC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 26CA2EA22B3BA694006DA2AC /* FirebaseAuth */; };
+		26CA2EA52B3BA694006DA2AC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 26CA2EA42B3BA694006DA2AC /* FirebaseFirestore */; };
+		26CA2EA72B3BA694006DA2AC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 26CA2EA62B3BA694006DA2AC /* FirebaseFirestoreSwift */; };
+		26CA2EA92B3BA694006DA2AC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 26CA2EA82B3BA694006DA2AC /* FirebaseStorage */; };
+		26CA2EAD2B3C3B28006DA2AC /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CA2EAC2B3C3B28006DA2AC /* AuthViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26CA2E6E2B3B6CED006DA2AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26CA2E552B3B6CEA006DA2AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26CA2E5C2B3B6CEA006DA2AC;
+			remoteInfo = Vibe;
+		};
+		26CA2E782B3B6CED006DA2AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26CA2E552B3B6CEA006DA2AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26CA2E5C2B3B6CEA006DA2AC;
+			remoteInfo = Vibe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26CA2E5D2B3B6CEA006DA2AC /* Vibe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CA2E602B3B6CEA006DA2AC /* VibeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeApp.swift; sourceTree = "<group>"; };
+		26CA2E622B3B6CEA006DA2AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		26CA2E642B3B6CED006DA2AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26CA2E672B3B6CED006DA2AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		26CA2E6D2B3B6CED006DA2AC /* VibeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CA2E712B3B6CED006DA2AC /* VibeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeTests.swift; sourceTree = "<group>"; };
+		26CA2E772B3B6CED006DA2AC /* VibeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VibeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26CA2E7B2B3B6CED006DA2AC /* VibeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeUITests.swift; sourceTree = "<group>"; };
+		26CA2E7D2B3B6CED006DA2AC /* VibeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		26CA2E932B3B77BA006DA2AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		26CA2E952B3B7A94006DA2AC /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		26CA2E972B3B862B006DA2AC /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		26CA2E992B3B8A40006DA2AC /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		26CA2E9B2B3B8D99006DA2AC /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		26CA2E9D2B3B9BE1006DA2AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		26CA2E9F2B3BA3BC006DA2AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26CA2EAC2B3C3B28006DA2AC /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26CA2E5A2B3B6CEA006DA2AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CA2EA32B3BA694006DA2AC /* FirebaseAuth in Frameworks */,
+				26CA2EA92B3BA694006DA2AC /* FirebaseStorage in Frameworks */,
+				26CA2EA52B3BA694006DA2AC /* FirebaseFirestore in Frameworks */,
+				26CA2EA72B3BA694006DA2AC /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26CA2E6A2B3B6CED006DA2AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26CA2E742B3B6CED006DA2AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26CA2E542B3B6CEA006DA2AC = {
+			isa = PBXGroup;
+			children = (
+				26CA2E5F2B3B6CEA006DA2AC /* Vibe */,
+				26CA2E702B3B6CED006DA2AC /* VibeTests */,
+				26CA2E7A2B3B6CED006DA2AC /* VibeUITests */,
+				26CA2E5E2B3B6CEA006DA2AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26CA2E5E2B3B6CEA006DA2AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E5D2B3B6CEA006DA2AC /* Vibe.app */,
+				26CA2E6D2B3B6CED006DA2AC /* VibeTests.xctest */,
+				26CA2E772B3B6CED006DA2AC /* VibeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26CA2E5F2B3B6CEA006DA2AC /* Vibe */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E8F2B3B76BE006DA2AC /* App */,
+				26CA2E8E2B3B76BD006DA2AC /* Components */,
+				26CA2E8D2B3B76B9006DA2AC /* Core */,
+				26CA2E8C2B3B76B7006DA2AC /* Model */,
+				26CA2E642B3B6CED006DA2AC /* Assets.xcassets */,
+				26CA2E662B3B6CED006DA2AC /* Preview Content */,
+			);
+			path = Vibe;
+			sourceTree = "<group>";
+		};
+		26CA2E662B3B6CED006DA2AC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E672B3B6CED006DA2AC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26CA2E702B3B6CED006DA2AC /* VibeTests */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E712B3B6CED006DA2AC /* VibeTests.swift */,
+			);
+			path = VibeTests;
+			sourceTree = "<group>";
+		};
+		26CA2E7A2B3B6CED006DA2AC /* VibeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E7B2B3B6CED006DA2AC /* VibeUITests.swift */,
+				26CA2E7D2B3B6CED006DA2AC /* VibeUITestsLaunchTests.swift */,
+			);
+			path = VibeUITests;
+			sourceTree = "<group>";
+		};
+		26CA2E8C2B3B76B7006DA2AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E9D2B3B9BE1006DA2AC /* User.swift */,
+				26CA2E9F2B3BA3BC006DA2AC /* GoogleService-Info.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26CA2E8D2B3B76B9006DA2AC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E912B3B7718006DA2AC /* Authentication */,
+				26CA2E922B3B7722006DA2AC /* Profile */,
+				26CA2E902B3B7708006DA2AC /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		26CA2E8E2B3B76BD006DA2AC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E952B3B7A94006DA2AC /* InputView.swift */,
+				26CA2E9B2B3B8D99006DA2AC /* SettingsRowView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		26CA2E8F2B3B76BE006DA2AC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E602B3B6CEA006DA2AC /* VibeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		26CA2E902B3B7708006DA2AC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E622B3B6CEA006DA2AC /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		26CA2E912B3B7718006DA2AC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2EAA2B3C39CE006DA2AC /* View */,
+				26CA2EAB2B3C39DA006DA2AC /* ViewModel */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		26CA2E922B3B7722006DA2AC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E992B3B8A40006DA2AC /* UserProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		26CA2EAA2B3C39CE006DA2AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2E972B3B862B006DA2AC /* RegistrationView.swift */,
+				26CA2E932B3B77BA006DA2AC /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26CA2EAB2B3C39DA006DA2AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26CA2EAC2B3C3B28006DA2AC /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26CA2E5C2B3B6CEA006DA2AC /* Vibe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26CA2E812B3B6CED006DA2AC /* Build configuration list for PBXNativeTarget "Vibe" */;
+			buildPhases = (
+				26CA2E592B3B6CEA006DA2AC /* Sources */,
+				26CA2E5A2B3B6CEA006DA2AC /* Frameworks */,
+				26CA2E5B2B3B6CEA006DA2AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vibe;
+			packageProductDependencies = (
+				26CA2EA22B3BA694006DA2AC /* FirebaseAuth */,
+				26CA2EA42B3BA694006DA2AC /* FirebaseFirestore */,
+				26CA2EA62B3BA694006DA2AC /* FirebaseFirestoreSwift */,
+				26CA2EA82B3BA694006DA2AC /* FirebaseStorage */,
+			);
+			productName = Vibe;
+			productReference = 26CA2E5D2B3B6CEA006DA2AC /* Vibe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26CA2E6C2B3B6CED006DA2AC /* VibeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26CA2E842B3B6CED006DA2AC /* Build configuration list for PBXNativeTarget "VibeTests" */;
+			buildPhases = (
+				26CA2E692B3B6CED006DA2AC /* Sources */,
+				26CA2E6A2B3B6CED006DA2AC /* Frameworks */,
+				26CA2E6B2B3B6CED006DA2AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26CA2E6F2B3B6CED006DA2AC /* PBXTargetDependency */,
+			);
+			name = VibeTests;
+			productName = VibeTests;
+			productReference = 26CA2E6D2B3B6CED006DA2AC /* VibeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26CA2E762B3B6CED006DA2AC /* VibeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26CA2E872B3B6CED006DA2AC /* Build configuration list for PBXNativeTarget "VibeUITests" */;
+			buildPhases = (
+				26CA2E732B3B6CED006DA2AC /* Sources */,
+				26CA2E742B3B6CED006DA2AC /* Frameworks */,
+				26CA2E752B3B6CED006DA2AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26CA2E792B3B6CED006DA2AC /* PBXTargetDependency */,
+			);
+			name = VibeUITests;
+			productName = VibeUITests;
+			productReference = 26CA2E772B3B6CED006DA2AC /* VibeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26CA2E552B3B6CEA006DA2AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					26CA2E5C2B3B6CEA006DA2AC = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					26CA2E6C2B3B6CED006DA2AC = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 26CA2E5C2B3B6CEA006DA2AC;
+					};
+					26CA2E762B3B6CED006DA2AC = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 26CA2E5C2B3B6CEA006DA2AC;
+					};
+				};
+			};
+			buildConfigurationList = 26CA2E582B3B6CEA006DA2AC /* Build configuration list for PBXProject "Vibe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26CA2E542B3B6CEA006DA2AC;
+			packageReferences = (
+				26CA2EA12B3BA694006DA2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 26CA2E5E2B3B6CEA006DA2AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26CA2E5C2B3B6CEA006DA2AC /* Vibe */,
+				26CA2E6C2B3B6CED006DA2AC /* VibeTests */,
+				26CA2E762B3B6CED006DA2AC /* VibeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26CA2E5B2B3B6CEA006DA2AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CA2E682B3B6CED006DA2AC /* Preview Assets.xcassets in Resources */,
+				26CA2E652B3B6CED006DA2AC /* Assets.xcassets in Resources */,
+				26CA2EA02B3BA3BC006DA2AC /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26CA2E6B2B3B6CED006DA2AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26CA2E752B3B6CED006DA2AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26CA2E592B3B6CEA006DA2AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CA2E942B3B77BA006DA2AC /* LoginView.swift in Sources */,
+				26CA2E9A2B3B8A40006DA2AC /* UserProfileView.swift in Sources */,
+				26CA2E962B3B7A94006DA2AC /* InputView.swift in Sources */,
+				26CA2E632B3B6CEA006DA2AC /* ContentView.swift in Sources */,
+				26CA2E9E2B3B9BE1006DA2AC /* User.swift in Sources */,
+				26CA2E612B3B6CEA006DA2AC /* VibeApp.swift in Sources */,
+				26CA2E982B3B862B006DA2AC /* RegistrationView.swift in Sources */,
+				26CA2E9C2B3B8D99006DA2AC /* SettingsRowView.swift in Sources */,
+				26CA2EAD2B3C3B28006DA2AC /* AuthViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26CA2E692B3B6CED006DA2AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CA2E722B3B6CED006DA2AC /* VibeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26CA2E732B3B6CED006DA2AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26CA2E7E2B3B6CED006DA2AC /* VibeUITestsLaunchTests.swift in Sources */,
+				26CA2E7C2B3B6CED006DA2AC /* VibeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26CA2E6F2B3B6CED006DA2AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26CA2E5C2B3B6CEA006DA2AC /* Vibe */;
+			targetProxy = 26CA2E6E2B3B6CED006DA2AC /* PBXContainerItemProxy */;
+		};
+		26CA2E792B3B6CED006DA2AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26CA2E5C2B3B6CEA006DA2AC /* Vibe */;
+			targetProxy = 26CA2E782B3B6CED006DA2AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26CA2E7F2B3B6CED006DA2AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26CA2E802B3B6CED006DA2AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26CA2E822B3B6CED006DA2AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Vibe/Preview Content\"";
+				DEVELOPMENT_TEAM = A9F5ZF5473;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akshay.Vibe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26CA2E832B3B6CED006DA2AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Vibe/Preview Content\"";
+				DEVELOPMENT_TEAM = A9F5ZF5473;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.akshay.Vibe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26CA2E852B3B6CED006DA2AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A9F5ZF5473;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = akshay.VibeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vibe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vibe";
+			};
+			name = Debug;
+		};
+		26CA2E862B3B6CED006DA2AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A9F5ZF5473;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = akshay.VibeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vibe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vibe";
+			};
+			name = Release;
+		};
+		26CA2E882B3B6CED006DA2AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A9F5ZF5473;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = akshay.VibeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vibe;
+			};
+			name = Debug;
+		};
+		26CA2E892B3B6CED006DA2AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A9F5ZF5473;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = akshay.VibeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vibe;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26CA2E582B3B6CEA006DA2AC /* Build configuration list for PBXProject "Vibe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CA2E7F2B3B6CED006DA2AC /* Debug */,
+				26CA2E802B3B6CED006DA2AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26CA2E812B3B6CED006DA2AC /* Build configuration list for PBXNativeTarget "Vibe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CA2E822B3B6CED006DA2AC /* Debug */,
+				26CA2E832B3B6CED006DA2AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26CA2E842B3B6CED006DA2AC /* Build configuration list for PBXNativeTarget "VibeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CA2E852B3B6CED006DA2AC /* Debug */,
+				26CA2E862B3B6CED006DA2AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26CA2E872B3B6CED006DA2AC /* Build configuration list for PBXNativeTarget "VibeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26CA2E882B3B6CED006DA2AC /* Debug */,
+				26CA2E892B3B6CED006DA2AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26CA2EA12B3BA694006DA2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26CA2EA22B3BA694006DA2AC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26CA2EA12B3BA694006DA2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		26CA2EA42B3BA694006DA2AC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26CA2EA12B3BA694006DA2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		26CA2EA62B3BA694006DA2AC /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26CA2EA12B3BA694006DA2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		26CA2EA82B3BA694006DA2AC /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26CA2EA12B3BA694006DA2AC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 26CA2E552B3B6CEA006DA2AC /* Project object */;
+}
