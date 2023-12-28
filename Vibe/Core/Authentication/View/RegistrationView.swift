@@ -26,7 +26,7 @@ struct RegistrationView: View {
                 .padding(.vertical, 10.0)
             
             // form fields
-            VStack(spacing: 20) {
+            VStack(spacing: 24) {
                 
                 InputView(text: $email,
                           title: "Email Address",
@@ -42,14 +42,31 @@ struct RegistrationView: View {
                           placeholder: "Enter your password",
                           secureField: true)
                 
-                InputView(text: $confirmPassword,
-                          title: "Confirm Passwork",
-                          placeholder: "Confirm your password",
-                          secureField: true)
+                ZStack(alignment: .trailing) {
+                    InputView(text: $confirmPassword,
+                              title: "Confirm Password",
+                              placeholder: "Confirm your password",
+                              secureField: true)
+                    
+                    if !password.isEmpty && !confirmPassword.isEmpty {
+                        if password == confirmPassword {
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                        } else {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemRed))
+                        }
+                    }
+                }
+                    
             }
             .padding(.horizontal)
             .padding(.top, 12)
-        
+                
             Button {
                 Task {
                     try await viewModel.createUser(withEmail: email,
@@ -66,10 +83,12 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }
             .background(Color(.systemBlue))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
-            
-            
+                
+                
             Spacer()
             
             Button {
@@ -83,6 +102,17 @@ struct RegistrationView: View {
                 .font(.system(size: 18))
             }
         }
+    }
+}
+
+extension RegistrationView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 8
+        && confirmPassword == password
+        && !fullName.isEmpty
     }
 }
 
