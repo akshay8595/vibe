@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @EnvironmentObject var viewModel: AuthViewModel
+    
+    @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
+                
+                Spacer()
+                
                 // image
                 Image("logo")
                     .resizable()
@@ -24,13 +26,13 @@ struct LoginView: View {
                 
                 // form fields
                 VStack(spacing: 24) {
-                    InputView(text: $email,
+                    InputView(text: $viewModel.email,
                               title: "Email Address",
                               placeholder: "name@example.com")
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     
-                    InputView(text: $password,
+                    InputView(text: $viewModel.password,
                               title: "Password",
                               placeholder: "Enter your password",
                               secureField: true)
@@ -39,11 +41,24 @@ struct LoginView: View {
                 .padding(.horizontal)
                 .padding(.top, 12)
                 
+                // forgot password
+                Button {
+                    print("Forgot Password?")
+                } label: {
+                    Text("Forgot password?")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .padding(.top)
+                        .padding(.trailing, 28)
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+                
+                
                 // sign in button
                 
                 Button {
                         Task {
-                            try await viewModel.signIn(withEmail: email, password: password)
+                            try await viewModel.signIn()
                         }
                 } label: {
                     HStack {
@@ -55,17 +70,18 @@ struct LoginView: View {
                     .frame(width: UIScreen.main.bounds.width - 32, height: 40)
                 }
                 .background(Color(.systemBlue))
-                .disabled(!formIsValid)
-                .opacity(formIsValid ? 1.0 : 0.5)
+//                .disabled(!formIsValid)
+//                .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)
                 .padding(.top, 24)
                 
                 Spacer()
                 
                 // sign up button
-                
                 NavigationLink {
-                    RegistrationView()
+//                    RegistrationView()
+//                        .navigationBarBackButtonHidden(true)
+                    AddEmailView()
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 5) {
@@ -81,14 +97,14 @@ struct LoginView: View {
     }
 }
 
-extension LoginView: AuthenticationFormProtocol {
-    var formIsValid: Bool {
-        return !email.isEmpty
-        && email.contains("@")
-        && !password.isEmpty
-        && password.count > 8
-    }
-}
+//extension LoginView: AuthenticationFormProtocol {
+//    var formIsValid: Bool {
+//        return !email.isEmpty
+//        && email.contains("@")
+//        && !password.isEmpty
+//        && password.count > 8
+//    }
+//}
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
