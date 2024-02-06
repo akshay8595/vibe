@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO - Not in use, deprecate.
 struct UserStatsView: View {
     let value: Int
     let title: String

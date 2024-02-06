@@ -1,44 +1,38 @@
 //
-//  CreatePasswordView.swift
+//  BusinessAccountSignUpView.swift
 //  Vibe
 //
-//  Created by Akshay Bhasin on 1/2/24.
+//  Created by Akshay Bhasin on 1/12/24.
 //
 
 import SwiftUI
 
-struct CreatePasswordView: View {
+struct BusinessAccountSignUpView: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: RegistrationViewModel
     
     var body: some View {
-        // text fields
-        VStack(spacing: 12) {
-            Text("Create password")
+        VStack( spacing: 12) {
+            
+            Text("Business Account Information")
                 .font(.title2)
-                .fontWeight(.bold)
-                .padding(.top)
+                .foregroundColor(.black)
+                .padding(25)
             
-            Text("Your password must be at least 6 characters in length")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 24)
-            
-            SecureField("Password", text: $viewModel.password)
+            TextField("Display Name", text: $viewModel.displayName)
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .modifier(TextFieldModifier())
-                .padding(.top)
+            
+            TextField("Business bio", text: $viewModel.bio)
+                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                .modifier(TextFieldModifier())
+            
+            Spacer()
             
             NavigationLink {
-                if viewModel.businessAccount {
-                    BusinessAccountSignUpView()
-                        .navigationBarBackButtonHidden(true)
-                } else {
-                    CompleteSignUpView()
-                        .navigationBarBackButtonHidden(true)
-                }
+                CompleteSignUpView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 Text("Next")
                     .font(.subheadline)
@@ -50,7 +44,6 @@ struct CreatePasswordView: View {
             }
             .padding(.vertical)
             
-            Spacer()
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -64,11 +57,10 @@ struct CreatePasswordView: View {
     }
 }
 
-struct CreatePasswordView_Previews: PreviewProvider {
+struct BusinessAccountSignUpView_Previews: PreviewProvider {
     static let viewModel = RegistrationViewModel()
-    
     static var previews: some View {
-        CreatePasswordView()
+        BusinessAccountSignUpView()
             .environmentObject(viewModel)
     }
 }

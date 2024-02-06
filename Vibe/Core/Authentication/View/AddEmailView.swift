@@ -31,6 +31,10 @@ struct AddEmailView: View {
                 .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                 .modifier(TextFieldModifier())
             
+            Toggle(isOn: $viewModel.businessAccount) {
+                Text("Business Account? ")
+            }.padding(10)
+            
             NavigationLink {
                 CreateUsernameView()
                     .navigationBarBackButtonHidden(true)
@@ -59,6 +63,11 @@ struct AddEmailView: View {
     }
 }
 
-#Preview {
-    AddEmailView()
+
+struct AddEmailView_Previews: PreviewProvider {
+    static let viewModel = RegistrationViewModel()
+    static var previews: some View {
+        AddEmailView()
+            .environmentObject(viewModel)
+    }
 }

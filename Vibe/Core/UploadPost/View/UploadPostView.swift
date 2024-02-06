@@ -8,6 +8,7 @@
 import SwiftUI
 import PhotosUI
 
+// TODO - Not in use, deprecate.
 struct UploadPostView: View {
     @State private var caption = ""
     @State private var imagePickerPresented = false

@@ -15,24 +15,23 @@ struct ContentView: View {
     var body: some View {
         
         Group {
+            
             if viewModel2.userSession == nil {
                 LoginView()
                     .environmentObject(registrationViewModel)
             } else if let currentUser = viewModel2.currentUser {
-                MainTabView(user: currentUser)
+                if let businessUser = currentUser.businessUser {
+                    if businessUser == true {
+                        BusinessProfileView(user: currentUser)
+                    } else {
+                        MainTabView(user: currentUser)
+                    }
+                } else {
+                    MainTabView(user: currentUser)
+                }
             }
         }
-        
-//        Group {
-//            if viewModel.userSession != nil {
-//                UserProfileView()
-//            } else {
-//                LoginView()
-//            }
-//        }
-//        Text("Hello World")
     }
-    
 }
 
 #Preview {

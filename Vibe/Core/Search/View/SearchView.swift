@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO - Not in use, deprecate.
 struct SearchView: View {
     @State private var searchText = ""
     @StateObject var viewModel = SearchViewModel()

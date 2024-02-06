@@ -37,6 +37,14 @@ struct LoginView: View {
                               placeholder: "Enter your password",
                               secureField: true)
                     .disableAutocorrection(true)
+                    
+                    Divider()
+                    
+                    Toggle(isOn: $viewModel.businessAccount) {
+                        Text("Business Account")
+                            .fontWeight(.semibold)
+                            .font(.footnote)
+                    }
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
@@ -70,8 +78,6 @@ struct LoginView: View {
                     .frame(width: UIScreen.main.bounds.width - 32, height: 40)
                 }
                 .background(Color(.systemBlue))
-//                .disabled(!formIsValid)
-//                .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)
                 .padding(.top, 24)
                 
@@ -79,8 +85,6 @@ struct LoginView: View {
                 
                 // sign up button
                 NavigationLink {
-//                    RegistrationView()
-//                        .navigationBarBackButtonHidden(true)
                     AddEmailView()
                         .navigationBarBackButtonHidden(true)
                 } label: {
@@ -90,21 +94,12 @@ struct LoginView: View {
                             .fontWeight(.bold)
                     }
                     .font(.system(size: 18))
-                }
+                }.padding(10)
                 
             }
         }
     }
 }
-
-//extension LoginView: AuthenticationFormProtocol {
-//    var formIsValid: Bool {
-//        return !email.isEmpty
-//        && email.contains("@")
-//        && !password.isEmpty
-//        && password.count > 8
-//    }
-//}
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

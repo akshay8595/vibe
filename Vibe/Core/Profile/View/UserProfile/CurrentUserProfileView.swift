@@ -18,9 +18,7 @@ struct CurrentUserProfileView: View {
                 ProfileHeaderView(user: user)
                 
                 // post grid view
-                
                 PostGridView(user: user)
-                
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)

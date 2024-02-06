@@ -35,11 +35,11 @@ class AuthService {
     }
     
     @MainActor
-    func createUser(withEmail email: String, password: String, username: String) async throws {
+    func createUser(withEmail email: String, password: String, username: String, businessUser: Bool = false) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            await uploadUserData(uid: result.user.uid, username: username, email: email)
+            await uploadUserData(uid: result.user.uid, username: username, email: email, businessUser: businessUser)
         } catch {
             print("DEBUG: Failed to register user with error \(error.localizedDescription)")
         }
@@ -50,8 +50,7 @@ class AuthService {
         self.userSession = Auth.auth().currentUser
         guard let currentUid = userSession?.uid else { return }
         self.currentUser = try await UserService.fetchUser(withUid: currentUid)
-        //print("DEBUG: Snapshot data is \(self.currentUser)")
-        
+        print("DEBUG: Snapshot data is \(self.currentUser!)")
     }
     
     func signout() {
@@ -60,12 +59,19 @@ class AuthService {
         self.currentUser = nil
     }
     
-    private func uploadUserData(uid: String, username: String, email: String) async {
-        let user = VibeUser(id: uid, username: username, email: email)
+    @MainActor
+    func uploadBusinessUserData(uid: String, username: String, email: String, displayName: String, bio: String) async {
+        let user = BusinessUser(id: uid, userName: username, displayName: displayName, email: email, bio: bio)
+        guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
+        try? await Firestore.firestore().collection("businessusers").document(user.id).setData(encodedUser)
+    }
+    
+    private func uploadUserData(uid: String, username: String, email: String, businessUser: Bool) async {
+        print("DEBUG: Uploading user data with business user value as \(businessUser)")
+        let user = VibeUser(id: uid, username: username, email: email, businessUser: businessUser)
         self.currentUser = user
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
         try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
-        
     }
     
 }

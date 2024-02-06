@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO - Not in use, deprecate.
 class SearchViewModel: ObservableObject {
     @Published var users = [VibeUser]()
     

@@ -32,7 +32,7 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
-            UploadPostView(tabIndex: $selectedIndex)
+            JoinView(user: user)
                 .onAppear() {
                     selectedIndex = 2
                 }
@@ -41,12 +41,12 @@ struct MainTabView: View {
                 }
                 .tag(2)
             
-            Text("Notifications")
+            PromotionsNearUserView(user: user)
                 .onAppear() {
                     selectedIndex = 3
                 }
                 .tabItem {
-                    Image(systemName: "heart")
+                    Image(systemName: "giftcard.fill")
                 }
                 .tag(3)
             
@@ -58,9 +58,9 @@ struct MainTabView: View {
                     Image(systemName: "person")
                 }
                 .tag(4)
+            
         }
         .accentColor(.black)
-        
     }
 }
 
@@ -69,7 +69,3 @@ struct MainTabView_Previews : PreviewProvider {
         MainTabView(user: VibeUser.MOCK_USERS[0])
     }
 }
-
-//#Preview {
-//    MainTabView()
-//}

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO - not in use, deprecate.
 struct FeedView: View {
     @StateObject var viewModel = FeedViewModel()
     

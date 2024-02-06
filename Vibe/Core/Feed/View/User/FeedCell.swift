@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 
+// TODO - not in use, deprecate.
 struct FeedCell: View {
     let post: Post
     

@@ -15,6 +15,7 @@ struct VibeUser: Identifiable, Hashable, Codable {
     var fullname: String?
     var bio: String?
     let email: String
+    var businessUser: Bool? = false // check here
     
     var isCurrentUser: Bool {
         guard let currentUid = Auth.auth().currentUser?.uid else { return false }

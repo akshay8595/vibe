@@ -10,7 +10,6 @@ import PhotosUI
 import SwiftUI
 import Firebase
 
-// TODO - Not in use, deprecate.
 @MainActor
 class UploadPostViewModel: ObservableObject {
     

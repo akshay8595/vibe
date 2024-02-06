@@ -11,7 +11,10 @@ import Firebase
 struct UserService {
     
     static func fetchUser(withUid uid: String) async throws -> VibeUser {
+        print("DEBUG: Fecthing User with UUID \(uid)")
         let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
+        print("DEBUG: Got User with UUID \(uid)")
+        print("DEBUG: Data received is \(snapshot.data())")
         return try snapshot.data(as: VibeUser.self)
 
     }

@@ -32,7 +32,7 @@ struct CompleteSignUpView: View {
                 .padding(.horizontal, 32)
             
             Button {
-                Task { try await viewModel.createUser() }
+                Task { try await viewModel.createAccount() }
             } label: {
                 Text("Complete Sign Up")
                     .font(.subheadline)
@@ -43,8 +43,6 @@ struct CompleteSignUpView: View {
                     .cornerRadius(8)
             }
             .padding(.vertical)
-            
-            
             Spacer()
         }
         .toolbar {
@@ -60,6 +58,10 @@ struct CompleteSignUpView: View {
     }
 }
 
-#Preview {
-    CompleteSignUpView()
+struct CompleteSignUpView_Previews: PreviewProvider {
+    static let viewModel = RegistrationViewModel()    
+    static var previews: some View {
+        CompleteSignUpView()
+            .environmentObject(viewModel)
+    }
 }

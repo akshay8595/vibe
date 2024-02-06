@@ -54,7 +54,6 @@ struct EditProfileView: View {
             }
             
             // edit profile pic
-            
             PhotosPicker(selection: $editProfileViewModel.selectedImage) {
                 VStack {
                     if let image = editProfileViewModel.profileImage {
@@ -79,7 +78,6 @@ struct EditProfileView: View {
             .padding(.vertical, 8)
             
             // edit profile info
-            
             VStack {
                 EditProfileRowView(title: "Name", placeholder: "Enter your name...", text: $editProfileViewModel.fullname)
                 
