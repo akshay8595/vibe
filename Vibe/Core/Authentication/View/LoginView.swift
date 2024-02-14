@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @EnvironmentObject var viewModel: AuthViewModel
+    
+    @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
+                
+                Spacer()
+                
                 // image
                 Image("logo")
                     .resizable()
@@ -24,26 +26,47 @@ struct LoginView: View {
                 
                 // form fields
                 VStack(spacing: 24) {
-                    InputView(text: $email,
+                    InputView(text: $viewModel.email,
                               title: "Email Address",
                               placeholder: "name@example.com")
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                     
-                    InputView(text: $password,
+                    InputView(text: $viewModel.password,
                               title: "Password",
                               placeholder: "Enter your password",
                               secureField: true)
                     .disableAutocorrection(true)
+                    
+                    Divider()
+                    
+                    Toggle(isOn: $viewModel.businessAccount) {
+                        Text("Business Account")
+                            .fontWeight(.semibold)
+                            .font(.footnote)
+                    }
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)
+                
+                // forgot password
+                Button {
+                    print("Forgot Password?")
+                } label: {
+                    Text("Forgot password?")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .padding(.top)
+                        .padding(.trailing, 28)
+                }
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .trailing)
+                
                 
                 // sign in button
                 
                 Button {
                         Task {
-                            try await viewModel.signIn(withEmail: email, password: password)
+                            try await viewModel.signIn()
                         }
                 } label: {
                     HStack {
@@ -61,9 +84,8 @@ struct LoginView: View {
                 Spacer()
                 
                 // sign up button
-                
                 NavigationLink {
-                    RegistrationView()
+                    AddEmailView()
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     HStack(spacing: 5) {
@@ -72,13 +94,12 @@ struct LoginView: View {
                             .fontWeight(.bold)
                     }
                     .font(.system(size: 18))
-                }
+                }.padding(10)
                 
             }
         }
     }
 }
-
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
