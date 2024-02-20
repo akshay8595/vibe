@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @StateObject var viewModel2 = ContentViewModel()
     @StateObject var registrationViewModel = RegistrationViewModel()
-    
+        
     var body: some View {
         
         Group {

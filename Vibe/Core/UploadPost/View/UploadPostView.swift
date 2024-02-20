@@ -11,6 +11,7 @@ import PhotosUI
 // TODO - Not in use, deprecate.
 struct UploadPostView: View {
     @State private var caption = ""
+    @State private var tag = ""
     @State private var imagePickerPresented = false
     @State private var photoItem: PhotosPickerItem?
     @StateObject var viewModel = UploadPostViewModel()
@@ -34,14 +35,13 @@ struct UploadPostView: View {
                 
                 Button {
                     Task {
-                        try await viewModel.uploadPost(caption: caption)
+                        try await viewModel.uploadPost(caption: caption, tag: tag)
                         clearPostDataAndReturnToFeed()
                     }
                 } label: {
                     Text("Upload")
                         .fontWeight(.semibold)
                 }
-                
             }
             .padding(.horizontal)
             
@@ -55,7 +55,13 @@ struct UploadPostView: View {
                         .clipped()
                 }
                 
-                TextField("Enter your caption ...", text: $caption, axis: .vertical)
+                VStack {
+                    TextField("Tag your #vibe", text: $tag, axis: .vertical)
+                        .textFieldStyle(.roundedBorder)
+                    
+                    TextField("Enter your caption", text: $caption, axis: .vertical)
+                        .textFieldStyle(.roundedBorder)
+                }
             }
             .padding()
             
@@ -69,6 +75,7 @@ struct UploadPostView: View {
     
     func clearPostDataAndReturnToFeed() {
         caption = ""
+        tag = ""
         viewModel.selectedImage = nil
         viewModel.postImage = nil
         tabIndex = 0

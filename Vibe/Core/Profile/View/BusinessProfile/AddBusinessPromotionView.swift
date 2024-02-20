@@ -37,6 +37,7 @@ struct AddBusinessPromotionView: View {
                     Text("Add Promotion Picture")
                         .font(.footnote)
                         .fontWeight(.semibold)
+                        .foregroundStyle(Color.themeColor)
                     
                     Divider()
                 }
@@ -82,7 +83,7 @@ struct AddBusinessPromotionView: View {
                     
             }
             .frame(width: 200, height: 50)
-            .background(Color.blue)
+            .background(Color.themeColor)
             .accentColor(.white)
             .cornerRadius(10)
         }

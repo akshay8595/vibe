@@ -34,6 +34,7 @@ class EventViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         print("DEBUG: Entered func fetchEventsNearMe")
         locationManager.startUpdatingLocation()
         print("DEBUG: User Location Received is is \(self.userLocation)")
+        print("DEBUG: User Location through location manager is \(self.locationManager.requestLocation())")
         self.eventsNearMe = try await EventService.fetchEventsByLocation(location: self.userLocation)
     }
     
@@ -47,7 +48,7 @@ class EventViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard !locations.isEmpty else { return }
+        print("DEBUG: Location callback received")
         if let userLocation = locations.last?.coordinate {
             print("DEBUG: User Location Received is \(userLocation)")
             self.userLocation = userLocation
@@ -56,4 +57,9 @@ class EventViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
         locationManager.stopUpdatingLocation() // swiftui repeatedly updates. We only need to get users location once.
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("DEBUG: Error during location callback is \(error)")
+    }
+    
 }

@@ -1,22 +1,22 @@
 //
-//  JoinView.swift
+//  UserHomeView.swift
 //  Vibe
 //
-//  Created by Akshay Bhasin on 1/29/24.
+//  Created by Akshay Bhasin on 2/7/24.
 //
 
 import SwiftUI
 
-struct JoinView: View {
+struct UserHomeView: View {
     
     let user: VibeUser
     let navBarAppearance = UINavigationBarAppearance()
+    
+    @StateObject var viewModel = FeedViewModel()
     @State private var selectedIndex = 0
     
     init(user: VibeUser) {
         self.user = user
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.themeColor)]
-        
         self.navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.themeColor)]
         UINavigationBar.appearance().standardAppearance = self.navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = self.navBarAppearance
@@ -25,51 +25,61 @@ struct JoinView: View {
     var body: some View {
         
         NavigationStack {
-            
             VStack {
-                
                 HStack {
                     Spacer()
-                    
-                    NavigationLink(destination: AddEventView(user: user)) {
-                        Text("Add Event")
+                    NavigationLink(destination: UploadPostView(tabIndex: .constant(0))) {
+                        
+                        Text("Add your Vibe")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
-                            .frame(width: 100, height: 35)
+                            .frame(width: 120, height: 35)
                             .background(Color.themeColor)
                             .cornerRadius(8)
                             .padding(.trailing, 10)
                     }
                     
                 }
-                
-                Divider()
-                
+                .padding(.bottom, 8)
+                .padding(.top, 10)
+               
                 Picker("", selection: $selectedIndex) {
-                    Text("Events Near Me")
+                    Text("Vibe")
                         .tag(0)
-                    Text("My Events")
+                    Text("Map")
                         .tag(1)
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
+              
                 switch(selectedIndex) {
                 case 0:
-                    EventsNearMeView(user: user)
+                    FeedView()
                 case 1:
-                    MyEventsView(user: user)
+                    MapFieldView()
                 default:
                     Text("Unsupported Operation")
                 }
                 Spacer()
             }
-            .navigationTitle("Join?")
+            .navigationTitle("Your Vibe")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("testImage1")
+                        .resizable()
+                        .frame(width: 32, height: 24)
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(systemName: "paperplane")
+                        .imageScale(.large)
+                }
+            }
         }
     }
 }
 
 #Preview {
-    JoinView(user: VibeUser.MOCK_USERS[2])
+    UserHomeView(user: VibeUser.MOCK_USERS[0])
 }

@@ -12,7 +12,7 @@ struct FeedView: View {
     @StateObject var viewModel = FeedViewModel()
     
     var body: some View {
-        NavigationStack {
+        VStack {
             ScrollView {
                 LazyVStack(spacing: 32) {
                     ForEach(viewModel.posts) { post in
@@ -20,21 +20,12 @@ struct FeedView: View {
                     }
                 }
             }
-            .navigationTitle("Feed")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image("testImage1")
-                        .resizable()
-                        .frame(width: 32, height: 24)
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "paperplane")
-                        .imageScale(.large)
-                }
-            }
         }
+        .onAppear(perform: {
+            Task {
+                try await viewModel.fetchPosts()
+            }
+        })
     }
 }
 

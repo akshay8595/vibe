@@ -1,17 +1,18 @@
 //
-//  EventViewRepresentable.swift
+//  PostsOnMap.swift
 //  Vibe
 //
-//  Created by Akshay Bhasin on 1/25/24.
+//  Created by Akshay Bhasin on 2/10/24.
 //
 
 import SwiftUI
 import MapKit
 
-// TODO - not in use, deprecate. Useful class to know how location logic works. Therefore, leaving it here.
-struct EventViewRepresentable: UIViewRepresentable {
+struct PostsOnMap {
+
     
     let mapView = MKMapView()
+    
     @StateObject var viewModel: LocationSearchViewModel = LocationSearchViewModel.shared
     
     func makeUIView(context: Context) -> some UIView {
@@ -23,19 +24,11 @@ struct EventViewRepresentable: UIViewRepresentable {
         return mapView;
     }
     
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let coordinate = viewModel.selectedLocationCoordinate {
-            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
-        }
-    }
-    
     func updateUIViewWithCoordinates(coordinate: CLLocationCoordinate2D) {
-        mapView.removeAnnotations(mapView.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         mapView.addAnnotation(annotation)
         mapView.selectAnnotation(annotation, animated: true)
-        
         mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
@@ -44,16 +37,16 @@ struct EventViewRepresentable: UIViewRepresentable {
     }
 }
 
-extension EventViewRepresentable {
+extension PostsOnMap {
     
     class MapCoordinator: NSObject, MKMapViewDelegate {
         
         // MARK: - Properties
-        let parent: EventViewRepresentable
+        let parent: PostsOnMap
         
         // MARK: - Lifecycle
         
-        init(parent: EventViewRepresentable) {
+        init(parent: PostsOnMap) {
             self.parent = parent
             super.init()
         }
@@ -69,15 +62,9 @@ extension EventViewRepresentable {
             parent.mapView.setRegion(region, animated: true)
         }
         
-        // MARK: - Helpers
-        
-        func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D) {
-            parent.mapView.removeAnnotations(parent.mapView.annotations)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            parent.mapView.addAnnotation(annotation)
-            parent.mapView.selectAnnotation(annotation, animated: true)
-            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true)
-        }
     }
+}
+
+#Preview {
+    PostsOnMap()
 }

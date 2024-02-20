@@ -30,7 +30,7 @@ struct EventService {
         // get the events by latitudes and filter by longitudes
         // this is not efficient at all, TODO as a fast follow up with geohash.
         
-        var rangeOfEvents: [Event] = try snapshot.documents.compactMap({ try $0.data(as: Event.self) }).filter({ event in
+        let rangeOfEvents: [Event] = try snapshot.documents.compactMap({ try $0.data(as: Event.self) }).filter({ event in
             if ( (event.longitude >= (location.longitude - longitudeRange))
                  && (event.longitude <= (location.longitude + longitudeRange))) {
                 return true
@@ -49,11 +49,6 @@ struct EventService {
         
         for doc in snapshot.documents {
             print("DEBUG: Data is \(doc.data())")
-            do {
-                var newEvent: Event = try doc.data(as: Event.self)
-            } catch {
-                print("Error is \(error)")
-            }
         }
         
         return try snapshot.documents.compactMap({ try $0.data(as: Event.self) })
