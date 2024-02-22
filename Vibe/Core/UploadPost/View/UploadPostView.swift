@@ -25,11 +25,13 @@ struct UploadPostView: View {
                     clearPostDataAndReturnToFeed()
                 } label: {
                     Text("Cancel")
+                        .foregroundStyle(Color.themeColor)
                 }
                 Spacer()
                 
                 Text("New Post")
                     .fontWeight(.semibold)
+                    .foregroundStyle(Color.themeColor)
                 
                 Spacer()
                 
@@ -40,7 +42,8 @@ struct UploadPostView: View {
                     }
                 } label: {
                     Text("Upload")
-                        .fontWeight(.semibold)
+                        .foregroundStyle(Color.themeColor)
+                        
                 }
             }
             .padding(.horizontal)

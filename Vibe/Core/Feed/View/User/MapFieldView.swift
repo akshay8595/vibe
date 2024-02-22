@@ -32,8 +32,6 @@ struct MapFieldView: View {
     @State private var position: MapCameraPosition = .automatic
     @State var annotation: [PostLocation] = [PostLocation]()
     
-    let mapView = MKMapView()
-    
     var body: some View {
         
         VStack {
@@ -41,6 +39,9 @@ struct MapFieldView: View {
                 ForEach(annotation, id: \.self) { anno in
                     Marker("Post", systemImage: "figure.wave", coordinate: anno.coordinate)
                 }
+                
+                Marker("My Location", coordinate: viewModel.userLocation)
+                    .tint(Color.blue)
             }
         }
         .onAppear(perform: {
@@ -54,9 +55,6 @@ struct MapFieldView: View {
         try await viewModel.fetchPosts()
         self.position = .region(MKCoordinateRegion(center: viewModel.userLocation,
                                                    span: Constants.SPAN))
-        
-        let annotations = mapView.annotations.filter({ !($0 is MKUserLocation) })
-        mapView.removeAnnotations(annotations)
         self.annotation = viewModel.posts.compactMap({ 
             return PostLocation(coordinate: CLLocationCoordinate2D(latitude: $0.latitude,
                                                                    longitude: $0.longitude))

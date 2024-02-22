@@ -15,8 +15,6 @@ struct JoinView: View {
     
     init(user: VibeUser) {
         self.user = user
-//        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.themeColor)]
-        
         self.navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.themeColor)]
         UINavigationBar.appearance().standardAppearance = self.navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = self.navBarAppearance
@@ -25,7 +23,6 @@ struct JoinView: View {
     var body: some View {
         
         NavigationStack {
-            
             VStack {
                 
                 HStack {
@@ -67,6 +64,7 @@ struct JoinView: View {
             .navigationTitle("Join?")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .accentColor(Color.themeColor)
     }
 }
 

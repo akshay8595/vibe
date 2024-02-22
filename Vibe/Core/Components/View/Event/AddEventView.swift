@@ -39,7 +39,7 @@ struct AddEventView: View {
                 
                 if !showLocationSearchView {
                     EventViewRepresentable()
-                        .frame(width: .infinity, height: 300)
+                        .frame(height: 300)
                         .ignoresSafeArea()
                 }
                 

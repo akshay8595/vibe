@@ -28,7 +28,7 @@ struct EventLocationPickerView: View {
             
             Spacer()
         }
-        .frame(width: .infinity, height: 50)
+        .frame(height: 50)
         .background(
             Rectangle()
                 .fill(Color.white)

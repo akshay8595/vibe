@@ -77,6 +77,7 @@ struct UserHomeView: View {
                 }
             }
         }
+        .accentColor(Color.themeColor)
     }
 }
 

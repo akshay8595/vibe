@@ -61,7 +61,6 @@ struct EventLocationView: View {
             }
         }
         .frame(maxWidth: .infinity)
-        
     }
 }
 

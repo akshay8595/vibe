@@ -37,7 +37,9 @@ struct MainTabView: View {
                     selectedIndex = 2
                 }
                 .tabItem {
-                    Image(systemName: "plus.square")
+                    Image(systemName: "person.3.fill")
+                        .imageScale(.small)
+                        .scaledToFit()
                 }
                 .tag(2)
             
