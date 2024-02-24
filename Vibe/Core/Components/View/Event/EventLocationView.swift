@@ -30,7 +30,7 @@ struct EventLocationView: View {
             Map(initialPosition: MapCameraPosition.region(region)) {
                 Marker("Event Location", coordinate: region.center)
             }
-            .frame(width: .infinity, height: 200)
+            .frame(height: 200)
             
             HStack {
                 Text(event.description)
@@ -60,7 +60,7 @@ struct EventLocationView: View {
                 Spacer()
             }
         }
-        
+        .frame(maxWidth: .infinity)
     }
 }
 

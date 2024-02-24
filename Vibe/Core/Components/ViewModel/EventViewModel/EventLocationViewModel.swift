@@ -36,7 +36,7 @@ class EventLocationViewModel: ObservableObject {
         data["endTime"] = endTime
         data["latitude"] = location.latitude
         data["longitude"] = location.longitude
-        
+        data["attendees"] = [self.user.id]
         try await documentRef.setData(data)
     }
     

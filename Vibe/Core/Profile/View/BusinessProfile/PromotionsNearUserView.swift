@@ -19,12 +19,33 @@ struct PromotionsNearUserView: View {
     var body: some View {
         
         NavigationStack {
-            VStack(alignment: .leading, spacing: 5) {
+            VStack(alignment: .leading, spacing: 8) {
                 ScrollView {
                     ForEach(businessPromotionViewModel.allPosts) { post in
-                        BusinessPromotionCell(post: post)
+                        VStack(alignment: .leading, spacing: -5) {
+                            
+                            BusinessPromotionCell(post: post)
+                            
+                            Button() {
+                                print("Purchase")
+                            } label: {
+                                Text("BUY")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .frame(width: 70, height: 25)
+                                    .background(Color.themeColor)
+                                    .cornerRadius(8)
+                                    .padding(.leading, 30)
+                            }
+                        }
                     }
                 }
+                .onAppear(perform: {
+                    Task {
+                        try await businessPromotionViewModel.fetchPromotionsNearMe()
+                    }
+                })
                 .navigationTitle("Deals Near You")
                 .navigationBarTitleDisplayMode(.inline)
             }

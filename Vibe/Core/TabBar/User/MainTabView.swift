@@ -14,7 +14,7 @@ struct MainTabView: View {
     var body: some View {
         
         TabView(selection: $selectedIndex) {
-            FeedView()
+            UserHomeView(user: user)
                 .onAppear() {
                     selectedIndex = 0
                 }
@@ -37,7 +37,9 @@ struct MainTabView: View {
                     selectedIndex = 2
                 }
                 .tabItem {
-                    Image(systemName: "plus.square")
+                    Image(systemName: "person.3.fill")
+                        .imageScale(.small)
+                        .scaledToFit()
                 }
                 .tag(2)
             

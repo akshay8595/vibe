@@ -15,5 +15,5 @@ extension Color {
 }
 
 class Constants {
-    static let SPAN = MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
+    static let SPAN = MKCoordinateSpan(latitudeDelta: 0.050, longitudeDelta: 0.050)
 }
