@@ -10,6 +10,8 @@ import PhotosUI
 
 // TODO - Not in use, deprecate.
 struct UploadPostView: View {
+    
+    @Environment(\.dismiss) var dismiss
     @State private var caption = ""
     @State private var tag = ""
     @State private var imagePickerPresented = false
@@ -20,9 +22,14 @@ struct UploadPostView: View {
     var body: some View {
         VStack {
             // action tool bar
+            
+            Spacer()
+                .frame(height: 10)
+            
             HStack {
                 Button {
                     clearPostDataAndReturnToFeed()
+                    dismiss()
                 } label: {
                     Text("Cancel")
                         .foregroundStyle(Color.themeColor)
@@ -39,6 +46,7 @@ struct UploadPostView: View {
                     Task {
                         try await viewModel.uploadPost(caption: caption, tag: tag)
                         clearPostDataAndReturnToFeed()
+                        dismiss()
                     }
                 } label: {
                     Text("Upload")
@@ -76,12 +84,12 @@ struct UploadPostView: View {
         .photosPicker(isPresented: $imagePickerPresented, selection: $viewModel.selectedImage)
     }
     
-    func clearPostDataAndReturnToFeed() {
+    private func clearPostDataAndReturnToFeed() {
         caption = ""
         tag = ""
         viewModel.selectedImage = nil
         viewModel.postImage = nil
-        tabIndex = 0
+        tabIndex = 1
     }
 }
 
