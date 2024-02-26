@@ -25,4 +25,9 @@ struct UserService {
         return snapshot.documents.compactMap({ try? $0.data(as: VibeUser.self) })
     }
     
+    static func fetchBusinessUser(withUid uid: String) async throws -> BusinessUser {
+        let snapshot = try await Firestore.firestore().collection("businessusers").document(uid).getDocument()
+        return try snapshot.data(as: BusinessUser.self)
+    }
+    
 }

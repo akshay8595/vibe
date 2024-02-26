@@ -11,6 +11,7 @@ import Kingfisher
 struct BusinessPromotionCell: View {
     
     let post: BusinessPromotionPost
+    @State private var displayName: BusinessUser = BusinessUser.DEFAULT_USER
     
     var body: some View {
         HStack {
@@ -31,6 +32,12 @@ struct BusinessPromotionCell: View {
             
             VStack(alignment: .leading, spacing: 5) {
                 
+                Text("\(self.displayName.displayName)")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.themeColor)
+                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                
                 Text("Deal: \(post.description)")
                     .font(.subheadline)
                     .fontWeight(.bold)
@@ -48,6 +55,12 @@ struct BusinessPromotionCell: View {
                     .font(.subheadline)
             }
         }
+        .onAppear(perform: {
+            Task {
+                self.displayName = try await UserService.fetchBusinessUser(withUid: post.ownerUid)
+            }
+            
+        })
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(10)
     }

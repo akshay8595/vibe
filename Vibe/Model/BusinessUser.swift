@@ -26,6 +26,16 @@ struct BusinessUser: Identifiable, Hashable, Codable {
     }
 }
 
+// TODO: Remove this and fetch the business user during fetch of business promotions.
+extension BusinessUser {
+    static var DEFAULT_USER: BusinessUser = .init(id: NSUUID().uuidString,
+                                                  userName: "vibeAdmin",
+                                                  displayName: "Special Promotions",
+                                                  email: "vibeadmin@gmail.com",
+                                                  profileImageUrl: nil,
+                                                  bio: "Vibe Administrator")
+}
+
 extension BusinessUser {
     static var MOCK_USER: [BusinessUser] = [
         .init(id: NSUUID().uuidString, userName: "grilledCheese", displayName: "Texas Grilled Cheese", email: "grilledCheese@gmail.com", profileImageUrl: nil, bio: "Worlds best grilled cheese"),

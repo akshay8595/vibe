@@ -13,8 +13,11 @@ struct AddBusinessPromotionView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var addPromotionViewModel: AddBusinessPromotionViewModel
     
-    init(user: VibeUser) {
+    @Binding var selectedTab: Int
+    
+    init(user: VibeUser, selectedTab: Binding<Int>) {
         self._addPromotionViewModel = StateObject(wrappedValue: AddBusinessPromotionViewModel(user: user))
+        self._selectedTab = selectedTab
     }
     
     var body: some View {
@@ -75,6 +78,7 @@ struct AddBusinessPromotionView: View {
                 Task {
                     try await addPromotionViewModel.uploadPromotionData()
                     dismiss()
+                    selectedTab = 0
                 }
             } label: {
                 Text("Upload Promotion")
@@ -91,5 +95,6 @@ struct AddBusinessPromotionView: View {
 }
 
 #Preview {
-    AddBusinessPromotionView(user: VibeUser.MOCK_USERS[0])
+    AddBusinessPromotionView(user: VibeUser.MOCK_USERS[0], 
+                             selectedTab: .constant(2))
 }

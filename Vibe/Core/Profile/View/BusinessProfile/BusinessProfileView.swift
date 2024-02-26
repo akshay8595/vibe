@@ -42,7 +42,8 @@ struct BusinessProfileView: View {
                             PastBusinessPromotionsView(user: user)
                                 .tag(1)
                             
-                            AddBusinessPromotionView(user: user)
+                            AddBusinessPromotionView(user: user,
+                                                     selectedTab: $selectedTab)
                                 .tag(2)
                         })
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

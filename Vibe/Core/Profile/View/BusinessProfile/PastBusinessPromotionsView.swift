@@ -21,6 +21,15 @@ struct PastBusinessPromotionsView: View {
                 BusinessPromotionGridView(businessPromotionPost: businessPromotion)
             }
         }
+        .onAppear(perform: {
+            Task {
+                do {
+                    try await viewModel.fetchPastPromotions()
+                } catch {
+                    print("Error Received is \(error)")
+                }
+            }
+        })
         .refreshable {
             Task {
                 do {
